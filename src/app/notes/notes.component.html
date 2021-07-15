@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.7.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+<body>
+    <h2>Notes</h2>
+    
+    <ul class = "notes">
+        <li *ngFor = "let note of notes">
+            <a routerLink="/notes/{{note.id}}">
+                <span class = "inner">{{note.id}}</span>
+                 {{note.title}}
+            </a>
+            <button class="delete" title="Delete Note"
+                (click)="delete(note)">X</button>
+        </li>
+    </ul>
+    
+    <div>
+        
+        <h2>Adding Note</h2>
+    
+        <label for="new-title">Title: </label>
+        <input id="new-title" #noteTitle />
+    
+    
+        <label for="new-content">Content: </label>
+        <input id="new-content" #noteContent />
+    
+        <br/>
+    
+        <button class="add-button" (click)="add(noteTitle.value,noteContent.value); noteTitle.value=''; noteContent.value = ''">
+          Add Note
+        </button>
+      </div>
+    </body>
+    </html>
+
