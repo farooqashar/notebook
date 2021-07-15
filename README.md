@@ -1,4 +1,8 @@
-# Notebook
+# Firebase Hosting 
+
+This project is also hosted on Firebase using a Cloud Firestore database: https://notebook-f9308.web.app/
+
+## Notebook
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
 
